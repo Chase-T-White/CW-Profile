@@ -2,11 +2,11 @@
   {
     "id": "1",
     "name": "Last Best Place Brewery",
-    "description": "description of project",
-    "technologies": ["tech1", "tech2", "tech3"],
+    "description": "Lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson.",
+    "technologies": ["ReactJS", "NextJS", "tech3"],
     "github": "https://github.com/Chase-T-White/Last-Best-Place",
     "pageLive": "https://last-best-place.vercel.app/",
-    "projectImage": ""
+    "projectImage": "/images/projects/beerPic.png"
   },
   {
     "id": "2",
@@ -15,7 +15,7 @@
     "technologies": ["tech1", "tech2", "tech3"],
     "github": "https://github.com/Chase-T-White/Better-Together-Charcuterie",
     "pageLive": "https://better-together-charcuterie.vercel.app/",
-    "projectImage": ""
+    "projectImage": "/images/projects/charcuteriePic.png"
   },
   {
     "id": "3",
@@ -24,7 +24,7 @@
     "technologies": ["tech1", "tech2", "tech3"],
     "github": "https://github.com/Chase-T-White/Bad-Canyon-Designs",
     "pageLive": "https://bad-canyon-designs.netlify.app/",
-    "projectImage": ""
+    "projectImage": "/images/projects/designPic.png"
   },
   {
     "id": "4",
@@ -33,7 +33,7 @@
     "technologies": ["tech1", "tech2", "tech3"],
     "github": "https://github.com/Chase-T-White/Quiz",
     "pageLive": "https://gwbquizapp.netlify.app/",
-    "projectImage": ""
+    "projectImage": "/images/projects/quizPic.png"
   },
   {
     "id": "5",
@@ -42,6 +42,6 @@
     "technologies": ["tech1", "tech2", "tech3"],
     "github": "https://github.com/Chase-T-White/Cocktails",
     "pageLive": "https://gwbcocktails.netlify.app/",
-    "projectImage": ""
+    "projectImage": "/images/projects/cocktailPic.png"
   }
 ]

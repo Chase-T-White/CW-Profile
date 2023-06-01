@@ -17,7 +17,7 @@
   min-height: 700px;
 }
 
-/* Hero Section */
+/********** Hero Section **********/
 
 .hero_section {
   position: fixed;
@@ -46,12 +46,155 @@
 
 .home_portal {
   position: fixed;
-  left: 50%;
-  width: 500px;
-  height: 500px;
-  border-radius: 500vw;
   border: 5px solid var(--primary-color);
   background-color: rgba(0, 0, 0, 0.445);
   backdrop-filter: blur(5px);
   z-index: 10;
+}
+
+/********** Projects Section **********/
+
+.projects_section {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-rows: 10% 80% 10%;
+}
+
+.projects_displayContainer {
+  grid-column: 2;
+  grid-row: 2;
+
+  position: relative;
+  isolation: isolate;
+
+  display: grid;
+  grid-template-columns: 10% 10% 60% 10% 10%;
+  grid-template-rows: repeat(3, 1fr);
+  column-gap: 1rem;
+}
+
+.retroSphere {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: linear-gradient(
+    to top,
+    var(--primary-color),
+    rgb(0, 0, 37)
+  );
+  border-radius: 500vw;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.retroSphere > a {
+  display: inline-block;
+  width: inherit;
+  height: inherit;
+}
+
+.retroSphere img {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Other Projects */
+
+.otherProjects_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerTriangle {
+  width: 100%;
+  height: 50%;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+  isolation: isolate;
+}
+
+.containerTriangle::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+  border-left: 75px solid transparent;
+  border-right: 75px solid transparent;
+  border-top: 150px solid var(--primary-color);
+}
+
+.containerTriangle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  border-left: 65px solid transparent;
+  border-right: 65px solid transparent;
+  border-top: 138px solid black;
+}
+
+.otherProjects {
+  text-align: center;
+}
+
+/* Project Card */
+
+.project_cardContainer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: max-content;
+  padding: 1rem;
+  background-image: linear-gradient(
+    -45deg,
+    var(--primary-color) 20%,
+    transparent 20% 80%,
+    var(--primary-color) 80%
+  );
+}
+
+.project_card {
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.61);
+  backdrop-filter: blur(10px);
+  box-shadow: inset -1px 0 10px 0.25px rgb(141, 189, 218);
+  border-radius: 5px;
+}
+
+.project_card * {
+  text-shadow: 0 0 10px rgb(141, 189, 218);
+}
+
+.project_card > h3 {
+  margin-bottom: 1.5rem;
+}
+
+.project_card > p {
+  max-width: 80ch;
+  margin-bottom: 1rem;
+}
+
+.project_cardTechs {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.project_cardLinks {
+  display: flex;
+  gap: 0.75rem;
 }
