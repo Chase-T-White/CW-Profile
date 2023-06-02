@@ -28,6 +28,21 @@
   grid-template-rows: 1fr 6fr 1fr;
 }
 
+.hero_section h1 {
+  grid-column: 2;
+  grid-row: 2;
+  font-size: clamp(4rem, 20vw, 20rem);
+  text-align: center;
+}
+
+.hero_section h3 {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: flex-end;
+  margin-left: 3rem;
+  margin-bottom: 3rem;
+}
+
 .hero_nav {
   display: flex;
   align-items: center;
@@ -48,7 +63,7 @@
   position: fixed;
   border: 5px solid var(--primary-color);
   background-color: rgba(0, 0, 0, 0.445);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(50px);
   z-index: 10;
   overflow: hidden;
 }
@@ -212,10 +227,10 @@
 /********** About Section **********/
 
 .about_contentContainer {
-  width: inherit;
-  height: inherit;
+  width: 100%;
+  height: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .about_textContainer {
@@ -223,25 +238,45 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  grid-column: 1 / span 3;
+  grid-row: 1;
+}
+
+.about_textContainer header {
+  margin-bottom: 2rem;
 }
 
 .about_textContainer > div {
+  width: 100%;
   max-width: 80ch;
+}
+
+.additionalInfo li {
+  margin-bottom: 1rem;
+}
+
+.about_textContainer ul {
+  max-width: 50ch;
 }
 
 .about_imgContainer {
   position: relative;
-  grid-column: 2;
+  grid-column: 3 / span 3;
+  grid-row: 1;
   width: 100%;
   height: 100%;
-  background-image: url("/images/aboutFiller.png");
+  /* background-image: url("/images/aboutFiller.png");
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: bottom; */
 }
 
 .about_imgContainer > img {
-  filter: drop-shadow(0 0 10px red);
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.514));
+  object-fit: cover;
+  object-position: center;
+  bottom: 0;
+  z-index: -1;
 }
 /********** Contact Section **********/
 

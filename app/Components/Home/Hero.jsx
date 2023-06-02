@@ -17,7 +17,7 @@ const Hero = () => {
   const scale = useTransform(scrollYProgress, [0, 0.25], [1, 0.5]);
 
   return (
-    <motion.section
+    <section
       ref={ref}
       style={{ opacity, scale }}
       className={styles.hero_section}
@@ -26,10 +26,13 @@ const Hero = () => {
         <Nav />
       </aside>
       <h1>Chase White</h1>
+      <h3>
+        Frontend /<br /> Web Developer
+      </h3>
       <aside className={styles.hero_socials}>
         <Socials />
       </aside>
-    </motion.section>
+    </section>
   );
 };
 
