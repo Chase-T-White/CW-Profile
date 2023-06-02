@@ -4,6 +4,8 @@ import { useRef, useEffect, useState } from "react";
 import styles from "./page.module.css";
 import Hero from "./Components/Home/Hero";
 import Projects from "./Components/Home/Projects";
+import About from "./Components/Home/About";
+import Contact from "./Components/Home/Contact";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Home() {
@@ -63,7 +65,9 @@ export default function Home() {
         }}
         className={styles.home_portal}
       >
-        <Projects />
+        {/* <Projects /> */}
+        <About />
+        {/* <Contact /> */}
       </motion.div>
     </main>
   );

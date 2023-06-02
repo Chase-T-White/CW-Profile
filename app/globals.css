@@ -39,6 +39,10 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+/* h1 {
+  font-size: clamp();
+} */
+
 h1,
 h2,
 h3,

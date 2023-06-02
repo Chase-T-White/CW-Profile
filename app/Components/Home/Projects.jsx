@@ -7,6 +7,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { RiSignalTowerFill } from "react-icons/ri";
 import { AiOutlineGithub } from "react-icons/ai";
+import { motion, AnimatePresence } from "framer-motion";
+import { Autour_One } from "next/font/google";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -31,6 +33,70 @@ const Projects = () => {
 
   let gridColumn = -1;
 
+  const parentVariants = {
+    initial: {
+      opacity: 0,
+    },
+    open: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        type: "linear",
+        delay: 2,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        when: "afterChildren",
+        type: "linear",
+      },
+    },
+  };
+
+  const cardVariants = {
+    initial: {
+      height: 0,
+    },
+    open: {
+      height: "auto",
+      transition: {
+        duration: 1,
+        when: "beforeChildren",
+        staggerChildren: 0.5,
+        type: "linear",
+      },
+    },
+    exit: {
+      height: 0,
+      transition: {
+        duration: 1,
+        when: "afterChildren",
+        type: "linear",
+      },
+    },
+  };
+
+  const digitalTextVariants = {
+    initial: {
+      opacity: 0,
+    },
+    open: {
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        type: "linear",
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        duration: 0.5,
+        type: "linear",
+      },
+    },
+  };
+
   return (
     <section id="projects" className={styles.projects_section}>
       <article className={styles.projects_displayContainer}>
@@ -40,14 +106,15 @@ const Projects = () => {
           } else {
             gridColumn += 1;
           }
-          console.log(gridColumn);
           if (project.id === selectedProject.id) {
             return;
           } else {
             return (
               <div
-                style={{ gridArea: `2 / ${gridColumn}` }}
+                key={project.id}
+                style={{ gridArea: `1 / ${gridColumn}` }}
                 className={styles.otherProjects_container}
+                onClick={() => setSelectedProject(project)}
               >
                 <div className={styles.containerTriangle}>
                   <div className={styles.otherProjects}>{project.name}</div>
@@ -56,34 +123,57 @@ const Projects = () => {
             );
           }
         })}
-        <div className={styles.project_cardContainer}>
-          <div className={styles.project_card}>
-            <h3>{selectedProject.name}</h3>
-            <p>{selectedProject.description}</p>
-            <ul className={styles.project_cardTechs}>
-              {selectedProject.technologies.map((tech) => {
-                return <li>{tech}</li>;
-              })}
-            </ul>
-            <div className={styles.project_cardLinks}>
-              <div>
-                <Link href={selectedProject.github} target="_blank">
-                  <AiOutlineGithub />
-                </Link>
-              </div>
-              <div>
-                <Link href={selectedProject.pageLive} target="_blank">
-                  <RiSignalTowerFill />
-                </Link>
-              </div>
-            </div>
+        <AnimatePresence>
+          <motion.div
+            variants={parentVariants}
+            initial="initial"
+            animate="open"
+            exit="exit"
+            key={selectedProject.id}
+            className={styles.project_cardContainer}
+          >
+            <motion.div variants={cardVariants} className={styles.project_card}>
+              <motion.h3 variants={digitalTextVariants}>
+                {selectedProject.name}
+              </motion.h3>
+              <motion.p variants={digitalTextVariants}>
+                {selectedProject.description}
+              </motion.p>
+              <motion.ul
+                variants={digitalTextVariants}
+                className={styles.project_cardTechs}
+              >
+                {selectedProject.technologies.map((tech, i) => {
+                  return <li key={i}>{tech}</li>;
+                })}
+              </motion.ul>
+              <motion.div
+                variants={digitalTextVariants}
+                className={styles.project_cardLinks}
+              >
+                <div>
+                  <Link href={selectedProject.github} target="_blank">
+                    <AiOutlineGithub />
+                  </Link>
+                </div>
+                <div>
+                  <Link href={selectedProject.pageLive} target="_blank">
+                    <RiSignalTowerFill />
+                  </Link>
+                </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+          <div className={styles.retroSphere}>
+            <Link href={selectedProject.pageLive} target="_blank">
+              <Image
+                src={selectedProject.projectImage}
+                fill
+                alt={selectedProject.name}
+              />
+            </Link>
           </div>
-        </div>
-        <div className={styles.retroSphere}>
-          <Link href={selectedProject.pageLive} target="_blank">
-            <Image src={selectedProject.projectImage} fill />
-          </Link>
-        </div>
+        </AnimatePresence>
       </article>
     </section>
   );
