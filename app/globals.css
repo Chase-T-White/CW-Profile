@@ -9,6 +9,8 @@
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   --primary-color: rgb(174, 47, 224);
+  --secondary-color: rgb(212, 14, 130);
+  --attention-color: #3bc0a5;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -72,6 +74,7 @@ h4,
 h5,
 h6 {
   font-family: "Bebas Neue", "sans-serif";
+  color: var(--secondary-color);
 }
 
 a {
@@ -97,6 +100,10 @@ ol {
 
 .f-column {
   flex-direction: column;
+}
+
+.attention {
+  color: var(--attention-color);
 }
 
 @media (prefers-color-scheme: dark) {

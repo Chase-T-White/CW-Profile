@@ -151,12 +151,12 @@ const Projects = () => {
                 variants={digitalTextVariants}
                 className={styles.project_cardLinks}
               >
-                <div>
+                <div title="Github">
                   <Link href={selectedProject.github} target="_blank">
                     <AiOutlineGithub />
                   </Link>
                 </div>
-                <div>
+                <div title="Site Page">
                   <Link href={selectedProject.pageLive} target="_blank">
                     <RiSignalTowerFill />
                   </Link>
@@ -170,6 +170,7 @@ const Projects = () => {
                 src={selectedProject.projectImage}
                 fill
                 alt={selectedProject.name}
+                title="Go to Page"
               />
             </Link>
           </div>
