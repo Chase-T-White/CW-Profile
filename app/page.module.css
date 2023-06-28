@@ -4,7 +4,9 @@
   justify-content: space-between;
   align-items: center;
   width: 100vw;
-  height: 300vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("/images/heroBg.jpg");
+  background-attachment: fixed;
   scrollbar-width: none;
   min-height: 100vh;
   position: relative;
@@ -21,8 +23,6 @@
 
 .hero_section {
   position: fixed;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.76)),
-    url("/images/heroBg.jpg");
   display: grid;
   grid-template-columns: 1fr 6fr 1fr;
   grid-template-rows: 1fr 6fr 1fr;
@@ -31,7 +31,7 @@
 .hero_section h1 {
   grid-column: 2;
   grid-row: 2;
-  font-size: clamp(4rem, 20vw, 20rem);
+  font-size: clamp(4rem, 15vw, 18rem);
   text-align: center;
 }
 
@@ -57,6 +57,20 @@
   grid-row: 2;
 }
 
+@media screen and (max-width: 900px) {
+  .hero_section h3 {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .hero_section {
+    grid-template-columns: 25px 6fr 25px;
+    grid-template-rows: 1fr 6fr 1fr;
+  }
+}
+
 /* Portal */
 
 .home_portal {
@@ -68,17 +82,23 @@
   overflow: hidden;
 }
 
-.home_portal > section {
-  width: 100%;
-  height: 100%;
+/********** Sections Container **********/
+
+.sections_container {
+  margin-top: 228.75vh;
+  scroll-snap-type: y mandatory;
 }
 
 /********** Projects Section **********/
 
 .projects_section {
+  width: 100vw;
+  min-height: 100vh;
+  margin-bottom: 12rem;
+  scroll-snap-align: start;
   display: grid;
-  grid-template-columns: 10% 80% 10%;
-  grid-template-rows: 10% 80% 10%;
+  grid-template-columns: 50px 1fr 50px;
+  grid-template-rows: 50px 1fr 50px;
 }
 
 .projects_displayContainer {
@@ -89,7 +109,10 @@
   isolation: isolate;
 
   display: grid;
-  grid-template-columns: 10% 10% 60% 10% 10%;
+  grid-template-columns: repeat(2, minmax(300px, 15%)) 1fr repeat(
+      2,
+      minmax(300px, 15%)
+    );
   grid-template-rows: repeat(3, 1fr);
 }
 
@@ -128,41 +151,28 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.61);
+  backdrop-filter: blur(10px);
+  box-shadow: inset -1px 0 10px 0.25px rgb(141, 189, 218);
+  border-radius: 5px;
+  margin: 2rem;
+  padding: 1rem;
 }
 
 .containerTriangle {
   width: 100%;
-  height: 50%;
+  height: 100%;
 
   display: flex;
   align-items: center;
 
   position: relative;
   isolation: isolate;
-}
-
-.containerTriangle::before {
-  content: "";
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -2;
-  border-left: 75px solid transparent;
-  border-right: 75px solid transparent;
-  border-top: 150px solid var(--primary-color);
-}
-
-.containerTriangle::after {
-  content: "";
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-  border-left: 65px solid transparent;
-  border-right: 65px solid transparent;
-  border-top: 138px solid black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5px;
+  box-shadow: -1px 0 10px 0.25px rgb(141, 189, 218);
 }
 
 .otherProjects {
@@ -229,7 +239,8 @@
 
 .about_contentContainer {
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  margin-bottom: 12rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
@@ -271,6 +282,7 @@
 
 .about_quoteBlock {
   margin-top: 3rem;
+  max-width: 50ch;
 }
 
 .about_quoteBlock figcaption {
@@ -297,6 +309,12 @@
   z-index: -1;
 }
 /********** Contact Section **********/
+
+.contact_section {
+  width: 100vw;
+  height: 100vh;
+  scroll-snap-align: start;
+}
 
 .contact_contentContainer {
   display: flex;

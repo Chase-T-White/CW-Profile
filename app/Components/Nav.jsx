@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 
 const Nav = () => {
@@ -8,11 +7,11 @@ const Nav = () => {
     { nav: "Projects", link: "#projects" },
   ];
   return (
-    <nav>
+    <nav className="mainNav">
       <ul className="flex f-column">
         {navLinks.map((navLink, i) => {
           return (
-            <li key={i} className="nav-link">
+            <li key={i} className="nav-link__modified">
               <Link href={navLink.link}>{navLink.nav}</Link>
             </li>
           );

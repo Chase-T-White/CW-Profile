@@ -146,17 +146,20 @@ const About = () => {
                 </AnimatePresence>
               </div>
             </div>
-            <figure className={styles.about_quoteBlock}>
-              <blockquote>
-                <span className="attention">"</span>We will chase perfection,
-                and we will chase it relentlessly, knowing all the while we can
-                never attain it because nothing is perfect. But along the way,
-                we shall catch excellence.<span className="attention">"</span>
-              </blockquote>
-              <figcaption>
-                <em>--Vince Lombardi</em>
-              </figcaption>
-            </figure>
+            <div>
+              <figure className={styles.about_quoteBlock}>
+                <blockquote>
+                  <span className="attention">"</span>We will chase perfection,
+                  and we will chase it relentlessly, knowing all the while we
+                  can never attain it because nothing is perfect. But along the
+                  way, we shall catch excellence.
+                  <span className="attention">"</span>
+                </blockquote>
+                <figcaption>
+                  <em>--Vince Lombardi</em>
+                </figcaption>
+              </figure>
+            </div>
           </div>
           <div className={styles.about_imgContainer}>
             <Image src={profilePic} fill alt="Chase White" />

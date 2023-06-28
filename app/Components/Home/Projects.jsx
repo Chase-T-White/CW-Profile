@@ -31,8 +31,6 @@ const Projects = () => {
     return <Loading />;
   }
 
-  let gridColumn = -1;
-
   const parentVariants = {
     initial: {
       opacity: 0,
@@ -100,23 +98,27 @@ const Projects = () => {
   return (
     <section id="projects" className={styles.projects_section}>
       <article className={styles.projects_displayContainer}>
-        {projects.map((project) => {
-          if (gridColumn === 2) {
-            gridColumn += 2;
-          } else {
-            gridColumn += 1;
-          }
+        {projects.map((project, index) => {
+          const column =
+            index % 4 === 0 ? 1 : index % 4 === 1 ? 2 : index % 4 === 2 ? 4 : 5;
+          const row = Math.floor(index / 4) + 1;
+
           if (project.id === selectedProject.id) {
-            return;
+            return null;
           } else {
             return (
               <div
                 key={project.id}
-                style={{ gridArea: `1 / ${gridColumn}` }}
+                style={{ gridArea: `${row} / ${column}` }}
                 className={styles.otherProjects_container}
                 onClick={() => setSelectedProject(project)}
               >
-                <div className={styles.containerTriangle}>
+                <div
+                  className={styles.containerTriangle}
+                  style={{
+                    backgroundImage: `linear-gradient(rgba(44, 59, 68, 0.459), rgba(44, 59, 68, 0.459)), url(${project.projectImage})`,
+                  }}
+                >
                   <div className={styles.otherProjects}>{project.name}</div>
                 </div>
               </div>

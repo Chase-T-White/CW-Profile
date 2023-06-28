@@ -11,6 +11,9 @@
   --primary-color: rgb(174, 47, 224);
   --secondary-color: rgb(212, 14, 130);
   --attention-color: #3bc0a5;
+  --shadow-color: rgb(141, 189, 218);
+  --shadow-color-tint: rgba(44, 59, 68, 0.459);
+  --white-opacity: rgba(255, 255, 255, 0.85);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -41,14 +44,16 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  scroll-behavior: smooth;
+  position: relative;
 }
 
 h1 {
-  font-size: clamp(4rem, 5vw, 7rem);
+  font-size: clamp(4rem, 4.5vw, 6rem);
 }
 
 h2 {
-  font-size: clamp(3rem, 4vw, 6rem);
+  font-size: clamp(3rem, 4vw, 5rem);
 }
 
 h3 {
@@ -114,23 +119,94 @@ ol {
 
 /* Nav */
 
-nav {
+.mainNav {
   width: 100%;
   height: 100%;
 }
 
-nav > ul {
+.mainNav > ul {
   width: inherit;
   height: inherit;
   justify-content: space-around;
 }
 
-.nav-link {
+.nav-link__modified {
   font-size: 1.25rem;
   text-transform: uppercase;
   text-align: center;
   color: var(--primary-color);
   transform: rotate(-90deg);
+}
+
+@media screen and (max-width: 700px) {
+  .mainNav {
+    display: none;
+  }
+}
+
+/* Sidebar Nav */
+
+.sidebarNav {
+  position: fixed;
+  top: 25px;
+  left: 25px;
+  z-index: 100;
+  width: 100vw;
+  max-width: 500px;
+}
+
+.sidebar-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.sidebar-icon:hover {
+  color: var(--attention-color);
+}
+
+.sidebar-icon__close {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 200;
+}
+
+.sidebar {
+  background-color: rgba(0, 0, 0, 0.61);
+  backdrop-filter: blur(10px);
+  box-shadow: inset -1px 0 10px 0.25px rgb(141, 189, 218);
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 25px;
+  padding-left: 2rem;
+  width: 100%;
+}
+
+.sidebar-nav-link {
+  font-size: clamp(2rem, 8vw, 4rem);
+  font-weight: bold;
+  padding-block: 2rem;
+  color: var(--white-opacity);
+  text-shadow: 0 0 10px rgb(141, 189, 218);
+}
+
+.sidebar-nav-link:last-child {
+  margin-bottom: 2rem;
+}
+
+.sidebar-nav-link a:hover,
+.sidebar-socials > li:hover {
+  color: var(--attention-color);
+}
+
+.sidebar-socials {
+  display: flex;
+  gap: 3rem;
+  font-size: 3rem;
+  color: var(--white-opacity);
+  text-shadow: 0 0 10px rgb(141, 189, 218);
 }
 
 /* Socials */
@@ -142,4 +218,10 @@ nav > ul {
 .social-link {
   color: var(--primary-color);
   font-size: 4rem;
+}
+
+@media screen and (max-width: 700px) {
+  .socials-list {
+    display: none;
+  }
 }

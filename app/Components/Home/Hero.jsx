@@ -7,18 +7,18 @@ import Socials from "../Socials";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const Hero = () => {
-  const ref = useRef();
+  const targetRef = useRef();
   const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["end end", "start end"],
+    target: targetRef,
+    offset: ["end end", "end start"],
   });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.25], [1, 0.5]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
 
   return (
-    <section
-      ref={ref}
+    <motion.section
+      ref={targetRef}
       style={{ opacity, scale }}
       className={styles.hero_section}
     >
@@ -32,7 +32,7 @@ const Hero = () => {
       <aside className={styles.hero_socials}>
         <Socials />
       </aside>
-    </section>
+    </motion.section>
   );
 };
 
