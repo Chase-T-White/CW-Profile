@@ -112,9 +112,12 @@ const Projects = ({ innerWidth }) => {
                 ? 4
                 : 5;
             row = Math.floor(index / 4) + 1;
-          } else {
+          } else if (innerWidth > 900) {
             column = index % 2 === 0 ? 1 : 3;
             row = Math.floor(index / 2) + 1;
+          } else {
+            column = 2;
+            row = index + 1;
           }
 
           if (project.id === selectedProject.id) {

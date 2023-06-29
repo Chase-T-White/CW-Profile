@@ -154,6 +154,37 @@
   }
 }
 
+@media screen and (max-width: 1050px) {
+  .projects_displayContainer {
+    grid-template-columns: minmax(200px, 12.5%) minmax(300px, 1fr) minmax(
+        200px,
+        12.5%
+      );
+  }
+  .retroSphere {
+    width: 42vw;
+    height: 42vw;
+    position: absolute;
+    top: 30%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .projects_section {
+    height: auto;
+  }
+  .projects_displayContainer {
+    grid-template-columns: 1fr minmax(300px, 500px) 1fr;
+    grid-template-rows: 0;
+    grid-auto-rows: minmax(150px, 250px);
+    column-gap: 0;
+    width: 100%;
+  }
+  .retroSphere {
+    display: none;
+  }
+}
+
 /* Other Projects */
 
 .otherProjects_container {
@@ -242,6 +273,16 @@
   display: flex;
   gap: 0.75rem;
   color: var(--attention-color);
+}
+
+@media screen and (max-width: 900px) {
+  .project_cardContainer {
+    top: calc(250px + 1.5rem);
+    bottom: 0;
+    left: 0;
+    transform: translateX(0);
+    width: 100%;
+  }
 }
 
 /********** About Section **********/
