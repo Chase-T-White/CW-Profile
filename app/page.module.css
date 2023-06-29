@@ -324,6 +324,7 @@
   max-width: 1200px;
   height: 100%;
   margin-inline: auto;
+  padding-inline: 25px;
 }
 
 .contact_text {
@@ -348,6 +349,7 @@
 }
 
 .contact_formContainer {
+  width: 100%;
   flex: 2 1 auto;
 }
 
@@ -356,7 +358,9 @@
   flex-direction: column;
   gap: 1.5rem;
 
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
+  margin-inline: auto;
   padding: 2rem;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.61);
@@ -395,4 +399,19 @@
   outline: none;
   border-color: var(--error);
   box-shadow: -1px 0 10px 0.25px var(--error-tint);
+}
+
+@media screen and (max-width: 900px) {
+  .contact_contentContainer {
+    flex-direction: column;
+  }
+  .contact_text {
+    max-width: 600px;
+    text-align: center;
+  }
+  .contactsContainer {
+    justify-content: center;
+  }
+  .contact_formContainer {
+  }
 }
