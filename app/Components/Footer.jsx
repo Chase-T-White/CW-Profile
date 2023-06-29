@@ -5,7 +5,7 @@ const Footer = () => {
   const date = new Date().getFullYear();
   return (
     <footer>
-      All Rigts Reserved <AiOutlineCopyright /> {date}
+      All Rights Reserved <AiOutlineCopyright /> {date}
     </footer>
   );
 };

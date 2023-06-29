@@ -239,6 +239,14 @@ ol {
   text-shadow: 0 0 10px rgb(141, 189, 218);
 }
 
+/* Footer */
+
+footer {
+  text-align: center;
+  padding: 5rem 0;
+  margin-inline: 5px;
+}
+
 /* Socials */
 
 .socials-list {

@@ -109,11 +109,12 @@
   isolation: isolate;
 
   display: grid;
-  grid-template-columns: repeat(2, minmax(300px, 15%)) 1fr repeat(
+  grid-template-columns: repeat(2, minmax(200px, 18%)) minmax(500px, 1fr) repeat(
       2,
-      minmax(300px, 15%)
+      minmax(200px, 18%)
     );
   grid-template-rows: repeat(3, 1fr);
+  gap: 1.5rem;
 }
 
 .retroSphere {
@@ -155,8 +156,7 @@
   backdrop-filter: blur(10px);
   box-shadow: inset -1px 0 10px 0.25px rgb(141, 189, 218);
   border-radius: 5px;
-  margin: 2rem;
-  padding: 1rem;
+  padding: 1.25rem;
 }
 
 .containerTriangle {

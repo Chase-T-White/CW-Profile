@@ -6,6 +6,7 @@ import Hero from "./Components/Home/Hero";
 import Projects from "./Components/Home/Projects";
 import About from "./Components/Home/About";
 import Contact from "./Components/Home/Contact";
+import Footer from "./Components/Footer";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Home() {
@@ -87,6 +88,7 @@ export default function Home() {
         <About />
         <Projects />
         <Contact />
+        <Footer />
       </div>
     </main>
   );
