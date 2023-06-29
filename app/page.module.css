@@ -376,3 +376,23 @@
   padding: 0.5rem;
   color: var(--white-opacity);
 }
+
+.contact_formContainer form > div textarea {
+  font-size: 1rem;
+  padding: 0.5rem;
+  color: var(--white-opacity);
+}
+
+.contact_formContainer form > div input:focus-visible,
+.contact_formContainer form > div textarea:focus-visible {
+  outline: none;
+  border-color: var(--attention-color);
+  box-shadow: -1px 0 10px 0.25px var(--attention-color-shade);
+}
+
+.contact_formContainer form > div input:invalid,
+.contact_formContainer form > div textarea:invalid {
+  outline: none;
+  border-color: var(--error);
+  box-shadow: -1px 0 10px 0.25px var(--error-tint);
+}

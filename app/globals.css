@@ -15,6 +15,8 @@
   --shadow-color: rgb(141, 189, 218);
   --shadow-color-tint: rgba(44, 59, 68, 0.459);
   --white-opacity: rgba(255, 255, 255, 0.85);
+  --error: rgb(129, 0, 0);
+  --error-tint: rgb(138, 47, 47);
 }
 
 @media (prefers-color-scheme: dark) {
