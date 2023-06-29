@@ -10,7 +10,7 @@ import { AiOutlineGithub } from "react-icons/ai";
 import { motion, AnimatePresence } from "framer-motion";
 import { Autour_One } from "next/font/google";
 
-const Projects = () => {
+const Projects = ({ innerWidth }) => {
   const [projects, setProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -99,9 +99,23 @@ const Projects = () => {
     <section id="projects" className={styles.projects_section}>
       <article className={styles.projects_displayContainer}>
         {projects.map((project, index) => {
-          const column =
-            index % 4 === 0 ? 1 : index % 4 === 1 ? 2 : index % 4 === 2 ? 4 : 5;
-          const row = Math.floor(index / 4) + 1;
+          let column;
+          let row;
+
+          if (innerWidth > 1500) {
+            column =
+              index % 4 === 0
+                ? 1
+                : index % 4 === 1
+                ? 2
+                : index % 4 === 2
+                ? 4
+                : 5;
+            row = Math.floor(index / 4) + 1;
+          } else {
+            column = index % 2 === 0 ? 1 : 3;
+            row = Math.floor(index / 2) + 1;
+          }
 
           if (project.id === selectedProject.id) {
             return null;

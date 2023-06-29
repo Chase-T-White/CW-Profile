@@ -86,7 +86,7 @@ export default function Home() {
       ></motion.div>
       <div className={styles.sections_container}>
         <About />
-        <Projects />
+        <Projects innerWidth={innerWidth} />
         <Contact />
         <Footer />
       </div>
