@@ -331,6 +331,22 @@
   max-width: 80ch;
 }
 
+.contactsContainer {
+  margin-top: 3rem;
+  display: flex;
+  gap: 3rem;
+}
+
+.contact_link {
+  font-size: 3rem;
+  color: var(--attention-color);
+  transition: 0.5 ease-in-out;
+}
+
+.contact_link:hover {
+  color: var(--attention-color-shade);
+}
+
 .contact_formContainer {
   flex: 2 1 auto;
 }
@@ -346,10 +362,17 @@
   background-color: rgba(0, 0, 0, 0.61);
   backdrop-filter: blur(10px);
   box-shadow: inset -1px 0 10px 0.25px rgb(141, 189, 218);
+  text-shadow: 0 0 10px rgb(141, 189, 218);
 }
 
 .contact_formContainer form > div {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+}
+
+.contact_formContainer form > div input {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  color: var(--white-opacity);
 }

@@ -10,6 +10,7 @@
 
   --primary-color: rgb(174, 47, 224);
   --secondary-color: rgb(212, 14, 130);
+  --attention-color-shade: #27806e;
   --attention-color: #3bc0a5;
   --shadow-color: rgb(141, 189, 218);
   --shadow-color-tint: rgba(44, 59, 68, 0.459);
@@ -92,6 +93,29 @@ ol {
   list-style: none;
 }
 
+.btn {
+  font-size: 1.5rem;
+  padding: 0.15rem 0.25rem;
+  background-color: transparent;
+  border: 2px solid var(--attention-color);
+  cursor: pointer;
+  transition: 0.2 ease-in-out;
+  max-width: 150px;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: var(--attention-color);
+}
+
+.btn__primary {
+  background-color: var(--attention-color);
+}
+
+.btn__primary:hover {
+  background-color: var(--attention-color-shade);
+}
+
 .wrapper {
   width: 100vw;
   height: 100%;
@@ -136,6 +160,10 @@ ol {
   text-align: center;
   color: var(--primary-color);
   transform: rotate(-90deg);
+}
+
+.nav-link__modified:hover {
+  color: var(--attention-color);
 }
 
 @media screen and (max-width: 700px) {
@@ -218,6 +246,10 @@ ol {
 .social-link {
   color: var(--primary-color);
   font-size: 4rem;
+}
+
+.social-link:hover {
+  color: var(--attention-color);
 }
 
 @media screen and (max-width: 700px) {

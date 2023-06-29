@@ -90,6 +90,7 @@ const Sidebar = () => {
                     variants={child}
                     key={i}
                     className="sidebar-nav-link"
+                    onClick={() => setIsOpen(false)}
                   >
                     <Link href={navLink.link}>{navLink.nav}</Link>
                   </motion.li>

@@ -48,7 +48,7 @@ const About = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <section className={styles.about_section}>
+    <section id="about" className={styles.about_section}>
       <div className="wrapper">
         <article className={styles.about_contentContainer}>
           <div className={styles.about_textContainer}>
