@@ -43,11 +43,15 @@ const Contact = () => {
           </ul>
         </div>
         <div className={styles.contact_formContainer}>
-          <form action="">
+          <form
+            action="https://formsubmit.co/cheverlator@gmail.com"
+            method="POST"
+          >
             <div>
-              <label htmlFor="name">Name*</label>
+              <label htmlFor="name">Full Name*</label>
               <input
                 type="text"
+                name="name"
                 pattern="[a-zA-Z]{2,}\s{1}[a-zA-Z]{2,}"
                 maxLength={"40ch"}
                 required
@@ -57,6 +61,7 @@ const Contact = () => {
               <label htmlFor="phone">Phone Number*</label>
               <input
                 type="tel"
+                name="phone"
                 pattern="[0-9]{3}\s{1}[0-9]{3}-[0-9]{4}"
                 required
               />
@@ -66,6 +71,7 @@ const Contact = () => {
               <label htmlFor="email">Email*</label>
               <input
                 type="email"
+                name="email"
                 pattern="^[\w-.]+@([\w-]+\.)+[\w-]{2,}$"
                 maxLength={"254ch"}
                 required
