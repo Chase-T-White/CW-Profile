@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import scrollToSection from "../utils/scrollToSection";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { FiMenu } from "react-icons/fi";
 import { AiOutlineGithub, AiFillLinkedin } from "react-icons/ai";
@@ -92,7 +93,9 @@ const Sidebar = () => {
                     className="sidebar-nav-link"
                     onClick={() => setIsOpen(false)}
                   >
-                    <Link href={navLink.link}>{navLink.nav}</Link>
+                    <Link href={navLink.link} onClick={scrollToSection}>
+                      {navLink.nav}
+                    </Link>
                   </motion.li>
                 );
               })}

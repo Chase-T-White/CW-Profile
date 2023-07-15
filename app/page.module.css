@@ -11,6 +11,7 @@
   min-height: 100vh;
   position: relative;
   isolation: isolate;
+  scroll-behavior: smooth;
 }
 
 .main > section {
@@ -85,8 +86,18 @@
 /********** Sections Container **********/
 
 .sections_container {
-  margin-top: 245vh;
+  margin-top: 150vh;
+  height: 100vh;
+  overflow-y: scroll;
   scroll-snap-type: y mandatory;
+}
+
+/* Section Scroll Snapping */
+
+.projects_section,
+.about_section,
+.contact_section {
+  scroll-snap-align: start;
 }
 
 /********** Projects Section **********/
@@ -95,7 +106,6 @@
   width: 100vw;
   min-height: 100vh;
   margin-bottom: 12rem;
-  scroll-snap-align: start;
   display: grid;
   grid-template-columns: 50px 1fr 50px;
   grid-template-rows: 50px 1fr 50px;
@@ -293,6 +303,7 @@
   margin-bottom: 12rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  padding-inline: 25px;
 }
 
 .about_textContainer {
@@ -363,7 +374,6 @@
 .contact_section {
   width: 100vw;
   height: 100vh;
-  scroll-snap-align: start;
 }
 
 .contact_contentContainer {
@@ -429,12 +439,14 @@
   font-size: 1.5rem;
   padding: 0.5rem;
   color: var(--white-opacity);
+  background-color: #2b2a33;
 }
 
 .contact_formContainer form > div textarea {
   font-size: 1rem;
   padding: 0.5rem;
   color: var(--white-opacity);
+  background-color: #2b2a33;
 }
 
 .contact_formContainer form > div input:focus-visible,

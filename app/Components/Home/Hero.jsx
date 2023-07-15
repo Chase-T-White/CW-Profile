@@ -13,8 +13,8 @@ const Hero = () => {
     offset: ["end end", "end start"],
   });
 
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.5]);
 
   return (
     <motion.section

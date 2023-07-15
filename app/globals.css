@@ -19,11 +19,6 @@
   --error-tint: rgb(138, 47, 47);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-  }
-}
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -40,7 +35,7 @@ body {
   font-family: "Roboto Condensed", "sans-serif";
   font-size: clamp(1rem, 1vw, 1.5rem);
   line-height: 1.25;
-  color: rgb(var(--foreground-rgb));
+  color: var(--white-opacity);
   background: linear-gradient(
       to bottom,
       transparent,
@@ -135,12 +130,6 @@ ol {
 
 .attention {
   color: var(--attention-color);
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }
 
 /* Nav */
@@ -245,6 +234,7 @@ footer {
   text-align: center;
   padding: 5rem 0;
   margin-inline: 5px;
+  scroll-snap-align: start;
 }
 
 /* Socials */
