@@ -3,8 +3,8 @@ import Link from "next/link";
 const Nav = () => {
   const navLinks = [
     { nav: "Contact", link: "#contact" },
-    { nav: "About", link: "#about" },
     { nav: "Projects", link: "#projects" },
+    { nav: "About", link: "#about" },
   ];
   return (
     <nav className="mainNav">

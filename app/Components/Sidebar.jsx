@@ -56,9 +56,9 @@ const child = {
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navLinks = [
-    { nav: "Contact", link: "#contact" },
     { nav: "About", link: "#about" },
     { nav: "Projects", link: "#projects" },
+    { nav: "Contact", link: "#contact" },
   ];
   return (
     <nav className="sidebarNav">

@@ -19,35 +19,35 @@ export default function Home() {
 
   // const scaleDown = useTransform(scrollYProgress, [0, 0.25], [1, 0.5])
   // const opacity = useTransform(scrollYProgress, [0, 0.25], [1, 0])
-  const scale = useTransform(scrollYProgress, [0, 0.499, 0.5], [1, 5, 1]);
+  const scale = useTransform(scrollYProgress, [0, 0.45, 0.48], [1, 5, 1]);
   const x = useTransform(
     scrollYProgress,
-    [0, 0.499, 0.5],
+    [0, 0.45, 0.48],
     ["-50%", "-50%", "0"]
   );
   const y = useTransform(
     scrollYProgress,
-    [0, 0.499, 0.5],
+    [0, 0.45, 0.48],
     ["-50%", "-50%", "0"]
   );
 
   const top = useTransform(scrollYProgress, (pos) => {
-    return pos >= 0.5 ? "0" : `${innerHeight / 2}px`;
+    return pos >= 0.48 ? "0" : `${innerHeight / 2}px`;
   });
   const left = useTransform(scrollYProgress, (pos) => {
-    return pos >= 0.5 ? "0" : "50%";
+    return pos >= 0.48 ? "0" : "50%";
   });
   const borderRadius = useTransform(scrollYProgress, (pos) => {
-    return pos >= 0.5 ? "0" : "500vw";
+    return pos >= 0.48 ? "0" : "500vw";
   });
   const height = useTransform(scrollYProgress, (pos) => {
-    return pos >= 0.5 ? "100vh" : innerWidth >= 900 ? "500px" : "400px";
+    return pos >= 0.48 ? "100vh" : innerWidth >= 900 ? "500px" : "400px";
   });
   const width = useTransform(scrollYProgress, (pos) => {
-    return pos >= 0.5 ? "100vw" : innerWidth >= 900 ? "500px" : "400px";
+    return pos >= 0.48 ? "100vw" : innerWidth >= 900 ? "500px" : "400px";
   });
   const zIndex = useTransform(scrollYProgress, (pos) => {
-    return pos >= 0.5 ? "-100" : "100";
+    return pos >= 0.48 ? "-100" : "100";
   });
 
   useEffect(() => {}, []);

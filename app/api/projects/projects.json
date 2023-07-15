@@ -1,35 +1,35 @@
 [
   {
     "id": "1",
+    "name": "Cocktails App",
+    "description": "This was a fun project that is actually a revamped edition to an older version, which was build with just React. This iteration was built within Next13 utilizing Typescript and integrating api calls with React Query.",
+    "technologies": ["ReactJS", "Next", "Typescript", "TailwindCSS"],
+    "github": "https://github.com/Chase-T-White/Better-Cocktails",
+    "pageLive": "https://better-cocktails.vercel.app/",
+    "projectImage": "/images/projects/cocktailPic.png"
+  },
+  {
+    "id": "2",
     "name": "White Peak Contracting",
-    "description": "Lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson.",
-    "technologies": ["ReactJS", "NextJS", "TailwindCSS"],
+    "description": "This was sort of a concept Web Page that I wanted to create for my brother's contracting business. It was more of an excuse to work with Tailwind for the first time as well as continue playing with framer-motion.",
+    "technologies": ["ReactJS", "Next", "TailwindCSS"],
     "github": "https://github.com/Chase-T-White/WPC-3",
     "pageLive": "https://wpc-3.vercel.app/",
     "projectImage": "/images/projects/wpcPic.png"
   },
   {
-    "id": "2",
+    "id": "3",
     "name": "Last Best Place Brewery",
-    "description": "Lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson.",
-    "technologies": ["ReactJS", "NextJS", "tech3"],
+    "description": "I built this as a concept for my buddy's brewery. I was inspired after I found some cool animations that I thought would work in showcasing his various brews in a fun way. This was also my first time working with Next and I gotta say it feels luxurious to not have to build all the routes haha.",
+    "technologies": ["ReactJS", "Next"],
     "github": "https://github.com/Chase-T-White/Last-Best-Place",
     "pageLive": "https://last-best-place.vercel.app/",
     "projectImage": "/images/projects/beerPic.png"
   },
   {
-    "id": "3",
-    "name": "Better Together Charcuterie",
-    "description": "Lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson.",
-    "technologies": ["ReactJS", "NextJS", "tech3"],
-    "github": "https://github.com/Chase-T-White/Better-Together-Charcuterie",
-    "pageLive": "https://better-together-charcuterie.vercel.app/",
-    "projectImage": "/images/projects/charcuteriePic.png"
-  },
-  {
     "id": "4",
     "name": "Bad Canyon Designs",
-    "description": "Lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson.",
+    "description": "I had tried to build an eCommerce site once before and failed miserably. After a bit more grinding I felt confident to try again. My cousin's design business was a perfect opportunity to do just that. This was also my first time working with Redux and React-Bootstrap. I experienced a lot of growth in this project and am pleased that it doesn't crash on load haha.",
     "technologies": ["ReactJS", "Redux", "BootStrap"],
     "github": "https://github.com/Chase-T-White/Bad-Canyon-Designs",
     "pageLive": "https://bad-canyon-designs.netlify.app/",
@@ -38,19 +38,10 @@
   {
     "id": "5",
     "name": "Quiz App",
-    "description": "Lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson.",
-    "technologies": ["ReactJS", "tech2", "tech3"],
+    "description": "This was a fun app to play with and experienced a lot of initial growing pains as a developer. Nothing to flashy, just plain ol' React, but a great rush when it finally fully worked.",
+    "technologies": ["ReactJS"],
     "github": "https://github.com/Chase-T-White/Quiz",
     "pageLive": "https://gwbquizapp.netlify.app/",
     "projectImage": "/images/projects/quizPic.png"
-  },
-  {
-    "id": "6",
-    "name": "Cocktails App",
-    "description": "Lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson lorem empson.",
-    "technologies": ["ReactJS", "tech2", "tech3"],
-    "github": "https://github.com/Chase-T-White/Cocktails",
-    "pageLive": "https://gwbcocktails.netlify.app/",
-    "projectImage": "/images/projects/cocktailPic.png"
   }
 ]

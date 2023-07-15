@@ -85,7 +85,7 @@
 /********** Sections Container **********/
 
 .sections_container {
-  margin-top: 228.75vh;
+  margin-top: 245vh;
   scroll-snap-type: y mandatory;
 }
 

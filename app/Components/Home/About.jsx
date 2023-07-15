@@ -1,11 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import styles from "../../page.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import profilePic from "/public/images/aboutFiller.png";
-import { motion, AnimatePresence } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 
 const listVariants = {
   initial: {
@@ -46,9 +51,21 @@ const listItemVariants = {
 const About = () => {
   const [selectedId, setSelectedId] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
+  const targetRef = useRef();
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end end"],
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
-    <section id="about" className={styles.about_section}>
+    <motion.section
+      ref={targetRef}
+      style={opacity}
+      id="about"
+      className={styles.about_section}
+    >
       <div className="wrapper">
         <article className={styles.about_contentContainer}>
           <div className={styles.about_textContainer}>
@@ -166,7 +183,7 @@ const About = () => {
           </div>
         </article>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
